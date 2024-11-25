@@ -1,5 +1,5 @@
 from flat import Bill, Flatmate
-from report import PdfReport
+from report import PdfReport, FileSharer
 
 
 def dih_validator(who):
@@ -45,3 +45,6 @@ fm2 = Flatmate(name=flat_mate_2, days_in_house=fm2_dih)
 
 pdf_report = PdfReport(filename=f"{bill_period}.pdf")
 pdf_report.generate(flatmate1=fm1, flatmate2=fm2, bill=the_bill)
+
+file_sharer = FileSharer(filepath=pdf_report.filename)
+print(file_sharer.share())
